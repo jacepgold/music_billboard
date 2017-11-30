@@ -1,8 +1,17 @@
 <h1>Billboard - <%= @billboard.title %></h1>
+<h4>I, Jace Gold, take no responsibility for how horribly inaccurate these are</h4>
+
+<p><%= link_to 'View All Billboards', billboards_path %></p>
+<p><%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %></p>
+
 <hr />
+
 <% @songs.each do |song| %>
-  <h2>Title<%= song.title %></h2>
+  <h2>Title - <%= link_to song.title, billboard_song_path(@billboard, song) %></h2>
+  <h3>Artist - <%= song.artist %></h2>
 <% end %>
+
 <hr />
+
 <h3><%= link_to 'View All Billboards', billboards_path %></h3>
-<h3><%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
+<h3><%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %></h3>

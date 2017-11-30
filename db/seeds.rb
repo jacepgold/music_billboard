@@ -20,12 +20,16 @@
 
 Billboard.create(title: 'Billboard Top Whatever')
 Billboard.create(title: "Jace's Billboard")
-Song.create(title: "Jace's Rockin Song!")
+Song.create(title: "Jace's Rockin Song!", artist: 'Jace Gold')
+
 30.times do
+  the_artist = Faker::RockBand.name
+  the_song = Faker::TwinPeaks.character
   Artist.create(
-    name: Faker::RockBand.name
+    name: the_artist
   )
   Song.create(
-    title: Faker::RockBand.name
+    title: the_song,
+    artist: the_artist
   )
 end

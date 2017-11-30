@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_artist
+  # before_action :set_artist
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
 
@@ -8,7 +8,7 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(param[:id])
+    @song = Song.find(params[:id])
   end
 
   def edit
@@ -40,15 +40,15 @@ class SongsController < ApplicationController
   end
 
   private
-  def set_artist
-    @artist = Artist.find(params[:artist_id])
-  end
+  # def set_artist
+  #   @artist = Artist.find(params[:id])
+  # end
 
   def set_song
-    @song = @artist.songs.find(params[:id])
+    @song = Song.find(params[:id])
   end
 
   def song_params
-      params.require(:song).permit(:title, :duration, :belongs_to, :album)
+      params.require(:song).permit(:title, :artist, :duration, :belongs_to, :album)
   end 
 end

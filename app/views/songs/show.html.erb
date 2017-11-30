@@ -1,2 +1,5 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
+<h1><%= @song.title %></h1>
+<h2><%= @song.artist %></h2>
+<hr />
+<p>View in Spotify</p>
+<%= link_to 'Back to Billboard', url_for(:back) %>
