@@ -1,10 +1,13 @@
 class BillboardsController < ApplicationController
+  
   def index
     @billboards = Billboard.all
+    @Songs = Songs.all
   end
 
   def show
     @billboard = Billboard.find(params[:id])
+    @songs = Songs.all
   end
 
   def edit
