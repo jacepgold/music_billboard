@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20171129214735) do
 
   create_table "billboards", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "rank", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

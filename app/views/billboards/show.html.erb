@@ -1,2 +1,4 @@
 <h1>Billboard - <%= @billboard.title %></h1>
-<%= link_to 'All Billboards', billboards_path %>
+<hr />
+<h3><%= link_to 'View All Billboards', billboards_path %></h3>
+<h3><%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>

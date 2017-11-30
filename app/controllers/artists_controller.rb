@@ -8,7 +8,7 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    render_partial 'form'
+    render partial: 'form'
   end
 
   def new
@@ -20,6 +20,14 @@ class ArtistsController < ApplicationController
 
     if @artist.save
       redirect_to artists_path(@artist)
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @artist.update(artists_params)
+      redirect_to artists_path
     else
       render :new
     end

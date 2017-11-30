@@ -1,1 +1,7 @@
-<h1>This is a form for Billboard stuffs</h1>
+<h1><%= @billboard.title ? 'Edit Billboard' : 'Create Billboard'%></h1>
+<hr />
+<%= form_for @billboard do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
+<% end %>

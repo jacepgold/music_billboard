@@ -8,15 +8,26 @@ class SongsController < ApplicationController
   end
 
   def edit
-    render_partial 'form'
+    render partial: 'form'
   end
 
   def new
     @song = Songs.new(song_params)
     
     if @song.save
-      redirect_to artist_song_path(@artist, @song)
+      redirect_to song_path(@song)
+    else
+      render :new
+    end
+  end
 
+  def update
+    @song = Song.update(song_params)
+    if @song.save
+      # TODO
+    else
+      render :new
+    end
   end
 
   private

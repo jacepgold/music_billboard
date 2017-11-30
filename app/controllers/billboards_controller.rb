@@ -8,11 +8,13 @@ class BillboardsController < ApplicationController
   end
 
   def edit
-    render_partial 'form'
+    @billboard = Billboard.find(params[:id])
+    render partial: 'form'
   end
 
   def new
     @billboard = Billboard.new
+    render partial: 'form'
   end
 
   def create
@@ -25,8 +27,17 @@ class BillboardsController < ApplicationController
     end
   end
 
+  def update
+    @billboard = Billboard.find(params[:id])
+    if @billboard.update(billboard_params)
+      redirect_to billboards_path
+    else
+      render partial: "form"
+    end
+  end
+
   private
     def billboard_params
-      params.require(:billboard).permit(:title, :rank)
+      params.require(:billboard).permit(:title)
     end
 end
