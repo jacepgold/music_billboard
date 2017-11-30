@@ -1,13 +1,12 @@
 class BillboardsController < ApplicationController
+  before_action :set_songs
   
   def index
     @billboards = Billboard.all
-    @Songs = Songs.all
   end
 
   def show
     @billboard = Billboard.find(params[:id])
-    @songs = Songs.all
   end
 
   def edit
@@ -42,5 +41,9 @@ class BillboardsController < ApplicationController
   private
     def billboard_params
       params.require(:billboard).permit(:title)
+    end
+    
+    def set_songs
+      @songs = Song.all
     end
 end

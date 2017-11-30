@@ -1,4 +1,4 @@
 class Billboard < ApplicationRecord
-  has_many :Songs
-  has_many :Artists, through: :Songs
+  has_many :songs
+  has_many :artists
 end

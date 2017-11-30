@@ -1,3 +1,4 @@
 class Artist < ApplicationRecord
-  has_many :Song
+  belongs_to :billboard, optional: true
+  has_many :songs
 end

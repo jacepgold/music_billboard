@@ -6,29 +6,26 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# puts '----------'
-# foo = Artist.create(name: 'Foo Fighters')
-# puts "Artist Successfully Created - Foo Fighters\n"
-# Artist.create(name: 'Mark-Anthony')
-# puts "Artist Successfully Created - Mark Anthony\n"
+# title: Faker::ChuckNorris.fact
 
-# puts '----------'
-# Billboard.create(title: 'Billboard', rank: 20)
-# puts "Billboard Successfully Created - Default Rank = 20\n"
 
-# puts '----------'
-30.times do
-  Song.create(
-    title: Faker::ChuckNorris.fact,
-    # billboard_id: Faker::Number.between(0, 30)
-  )
-end
 # puts "10 'Learn to Fly' Songs were Created\n"
 # puts '----------'
 
+# 2.times do 
+#   Billboard.create(
+#     title: Faker::Name.name
+#   )
+# end
 
+Billboard.create(title: 'Billboard Top Whatever')
+Billboard.create(title: "Jace's Billboard")
+Song.create(title: "Jace's Rockin Song!")
 30.times do
   Artist.create(
     name: Faker::RockBand.name
+  )
+  Song.create(
+    title: Faker::RockBand.name
   )
 end
