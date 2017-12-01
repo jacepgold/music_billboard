@@ -20,7 +20,7 @@
 
 Billboard.create(title: 'Billboard Top Whatever')
 Billboard.create(title: "Jace's Billboard")
-Song.create(title: "Jace's Rockin Song!", artist: 'Jace Gold')
+Song.create(title: "Monkey Wrench", artist: 'Foo Fighters')
 
 30.times do
   the_artist = Faker::RockBand.name
