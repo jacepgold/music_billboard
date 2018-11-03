@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MusicBillboard</title>
+    <title>Music Billboard</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1>Jace's Billboard Charts</h1>
+    </header>
+    <main class="container">
+      <%= yield %>
+    </main>
+    <footer class="footer">
+      <h3>Developed by <a href="http://www.jacegold.com">Jace P. Gold</a></h3>
+    </footer>
   </body>
 </html>

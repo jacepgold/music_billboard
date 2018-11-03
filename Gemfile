@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'materialize-sass'
-gem 'jquery-rails'
+gem 'materialize-sass', '~> 0.100.2'
+gem 'jquery-rails', '~> 4.3.1'
 gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
